@@ -1,0 +1,508 @@
+<html class="scroll-smooth" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+        PONDOK PESANTREN AL-ADZKIYA'
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+           font-family: "Inter", sans-serif;
+         }
+         /* Fade-in animation */
+         .fade-in {
+           opacity: 0;
+           transform: translateY(20px);
+           animation-fill-mode: forwards;
+           animation-name: fadeInUp;
+           animation-duration: 1s;
+           animation-timing-function: ease-out;
+         }
+         @keyframes fadeInUp {
+           to {
+             opacity: 1;
+             transform: translateY(0);
+           }
+         }
+         /* Hover scale and shadow for cards */
+         .hover-scale {
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+         }
+         .hover-scale:hover {
+           transform: scale(1.05);
+           box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.4),
+             0 10px 10px -5px rgba(59, 130, 246, 0.2);
+           z-index: 10;
+         }
+         /* Smooth scroll for anchor links */
+         html {
+           scroll-behavior: smooth;
+         }
+         /* Navigation link hover effect with underline and color */
+         nav ul li a,
+         #mobile-menu ul li a {
+           position: relative;
+           transition: color 0.3s ease;
+         }
+         nav ul li a::after,
+         #mobile-menu ul li a::after {
+           content: "";
+           position: absolute;
+           width: 0%;
+           height: 2px;
+           bottom: -4px;
+           left: 0;
+           background-color: #2563eb; /* Tailwind blue-600 */
+           transition: width 0.3s ease;
+           border-radius: 2px;
+         }
+         nav ul li a:hover,
+         #mobile-menu ul li a:hover {
+           color: #2563eb;
+         }
+         nav ul li a:hover::after,
+         #mobile-menu ul li a:hover::after {
+           width: 100%;
+         }
+         /* For keyboard focus accessibility */
+         nav ul li a:focus-visible,
+         #mobile-menu ul li a:focus-visible {
+           outline: none;
+           color: #2563eb;
+         }
+         nav ul li a:focus-visible::after,
+         #mobile-menu ul li a:focus-visible::after {
+           width: 100%;
+         }
+         /* Splash screen styles */
+         #splash-screen {
+           position: fixed;
+           inset: 0;
+           background: white;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           z-index: 50;
+           flex-direction: column;
+           gap: 1rem;
+           transition: opacity 0.5s ease, visibility 0.5s ease;
+         }
+         #splash-screen.hidden {
+           opacity: 0;
+           visibility: hidden;
+           pointer-events: none;
+         }
+         /* Spinner */
+         .spinner {
+           border: 4px solid #e5e7eb; /* gray-200 */
+           border-top: 4px solid #2563eb; /* blue-600 */
+           border-radius: 50%;
+           width: 48px;
+           height: 48px;
+           animation: spin 1s linear infinite;
+         }
+         @keyframes spin {
+           to {
+             transform: rotate(360deg);
+           }
+         }
+         /* Splash text */
+         #splash-text {
+           font-size: 1.5rem;
+           font-weight: 700;
+           color: #2563eb;
+           text-shadow: 0 0 8px rgba(37, 99, 235, 0.7);
+           font-family: "Inter", sans-serif;
+         }
+         /* Splash logo */
+         #splash-logo {
+           width: 96px;
+           height: 96px;
+           object-fit: contain;
+           filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.7));
+           animation: pulse 2s infinite ease-in-out;
+         }
+         @keyframes pulse {
+           0%, 100% {
+             transform: scale(1);
+             opacity: 1;
+           }
+           50% {
+             transform: scale(1.1);
+             opacity: 0.8;
+           }
+         }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<!-- Splash Screen -->
+<div aria-label="Loading PONDOK PESANTREN AL-ADZKIYA' website" aria-live="assertive" id="splash-screen" role="alert">
+    <img alt="Logo PONDOK PESANTREN AL-ADZKIYA'" height="96" id="splash-logo" loading="lazy" src="IMG-20221229-WA0208.jpg" width="96"/>
+    <div aria-hidden="true" class="spinner">
+    </div>
+    <div id="splash-text">
+        PONDOK PESANTREN AL-ADZKIYA'
+    </div>
+</div>
+<header class="bg-white shadow-md fixed w-full z-30 backdrop-blur-md bg-opacity-90 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a aria-label="Beranda PONDOK PESANTREN AL-ADZKIYA'" class="text-2xl font-bold text-blue-700 hover:text-blue-800 transition" href="#home">
+            PONDOK PESANTREN AL-ADZKIYA'
+        </a>
+        <nav>
+            <ul class="hidden md:flex space-x-8 text-gray-700 font-semibold">
+                <li>
+                    <a class="nav-link" href="#home" tabindex="0">
+                        Beranda
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#about" tabindex="0">
+                        Tentang Kami
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#programs" tabindex="0">
+                        Program
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#gallery" tabindex="0">
+                        Galeri
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#news" tabindex="0">
+                        Berita
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#contact" tabindex="0">
+                        Kontak
+                    </a>
+                </li>
+            </ul>
+            <button aria-label="Toggle menu" class="md:hidden text-gray-700 focus:outline-none" id="menu-btn" type="button">
+                <i aria-hidden="true" class="fas fa-bars fa-lg">
+                </i>
+            </button>
+        </nav>
+    </div>
+    <div class="md:hidden hidden bg-white shadow-md" id="mobile-menu">
+        <ul class="flex flex-col space-y-3 px-6 py-4 text-gray-700 font-semibold">
+            <li>
+                <a class="nav-link" href="#home" tabindex="0">
+                    Beranda
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="#about" tabindex="0">
+                    Tentang Kami
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="#programs" tabindex="0">
+                    Program
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="#gallery" tabindex="0">
+                    Galeri
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="#news" tabindex="0">
+                    Berita
+                </a>
+            </li>
+            <li>
+                <a class="nav-link" href="#contact" tabindex="0">
+                    Kontak
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+<main class="pt-20">
+    <!-- Hero Section -->
+    <section class="bg-white" id="home">
+        <div class="max-w-7xl mx-auto px-6 py-16 flex flex-col-reverse md:flex-row items-center md:items-start gap-10 fade-in" style="animation-delay: 0.2s">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-blue-700 leading-tight drop-shadow-md">
+                    Selamat Datang di PONDOK PESANTREN AL-ADZKIYA'
+                </h1>
+                <p class="mt-6 text-lg text-gray-600">
+
+                    "Dan kesejahteraan semoga dilimpahkan kepadaku pada hari kelahiranku, pada hari wafatku, dan pada hari aku dibangkitkan hidup kembali."
+                    (QS. Maryam: 33)
+                </p>
+                <a aria-label="Pelajari Lebih Lanjut tentang PONDOK PESANTREN AL-ADZKIYA'" class="inline-block mt-8 px-8 py-3 bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-800 transition transform hover:-translate-y-1" href="#about" role="button">
+                    Pelajari Lebih Lanjut
+                </a>
+            </div>
+            <div class="md:w-1/2">
+                <img class="rounded-lg shadow-xl transform transition-transform duration-700 hover:scale-105" height="400" loading="lazy" src="Santriwan santriwati Pondok Pesantren Al Adzkiya' Muhammadiyah Wotan Panceng Gresik Tahun Pelaj.webp" width="600"/>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="bg-gray-100 py-16" id="about">
+        <div class="max-w-7xl mx-auto px-6 fade-in" style="animation-delay: 0.4s">
+            <h2 class="text-3xl font-bold text-center text-blue-700 mb-10 drop-shadow-sm">
+                Tentang Kami
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img alt="Siswa dan guru sedang melakukan kegiatan belajar mengajar di PONPES AL ADZKIYA' dengan suasana ceria dan interaktif" class="rounded-lg shadow-lg hover-scale" height="400" loading="lazy" src="belajar2.jpg" width="600"/>
+                </div>
+                <div class="text-gray-700 text-lg leading-relaxed">
+                    <p>
+                        Pondok ini didirikan sebagai wadah pembinaan generasi muda Islam yang berlandaskan nilai-nilai Al-Qur’an dan As-Sunnah. Dengan suasana lingkungan yang religius dan pendidikan yang terarah, pondok berkomitmen mencetak santri yang tidak hanya cerdas secara intelektual, tetapi juga kuat dalam akidah serta mulia dalam akhlak. Melalui pembelajaran yang intensif, bimbingan kepribadian, dan pembiasaan ibadah,
+
+                    </p>
+                    <p class="mt-4">
+                        VISI :
+                        Terwujudnya generasi Muslim yang beraqidah shohihah (aqidah yang benar) dan berakhlak mulia (akhlaqul karimah),
+                        yang menjadikan Al-Qur’an dan As-Sunnah sebagai pedoman hidup.</p>
+                        <p class="mt-4">MISI:
+                        Melaksanakan pembinaan secara efektif agar setiap santri dapat berkembang secara optimal dalam memahami dasar-dasar ajaran Islam.
+
+                        Meningkatkan kedisiplinan santri dalam melaksanakan amal ibadah kepada Allah Subhanahu wa Ta'ala.
+
+                        Membimbing dan membina santri agar memiliki kepribadian yang luhur dan berakhlak mulia (akhlaqul karimah).
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Programs Section -->
+    <section class="bg-white py-16" id="programs">
+        <div class="max-w-7xl mx-auto px-6 fade-in" style="animation-delay: 0.6s">
+            <h2 class="text-3xl font-bold text-center text-blue-700 mb-10 drop-shadow-sm">
+                Program Pendidikan
+            </h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center hover-scale cursor-pointer">
+                    <img alt="Ikon program IPA dengan simbol atom dan alat laboratorium kimia berwarna biru" class="mb-4" height="120" loading="lazy" src="51d3aa97c980e088ea4f42f1278fbd7c.jpg" width="150"/>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">
+                        Program Tahfidzul Qur'an
+                    </h3>
+                    <p class="text-gray-600">
+                        Fokus pada program Tahfidzul Qur'an sebagai upaya mencetak generasi penghafal Al-Qur'an yang memahami makna dan mengamalkannya dalam kehidupan.
+
+                    </p>
+                </div>
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center hover-scale cursor-pointer">
+                    <img alt="Ikon program IPS dengan simbol globe dan grafik ekonomi berwarna hijau" class="mb-4" height="120" loading="lazy" src="360_F_277073455_lNhXcS5zwl2qAC3eMsp295qzIjwXiWjK.jpg" width="120"/>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">
+                        Program Tahsinul Khoth
+                    </h3>
+                    <p class="text-gray-600">
+                        Menekankan pada kajian kitab-kitab klasik (turats) sebagai sarana memperdalam pemahaman keislaman.
+                    </p>
+                </div>
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center hover-scale cursor-pointer">
+                    <img alt="Ikon program Bahasa dengan simbol buku dan pena berwarna oranye" class="mb-4" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3ca58b5d-70c3-4df1-9ef3-75a07b6dba97.jpg" width="120"/>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">
+                        Program Bahasa
+                    </h3>
+                    <p class="text-gray-600">
+                        Mengembangkan kemampuan bahasa asing dan komunikasi untuk
+                        menghadapi dunia global.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section -->
+    <section class="bg-gray-100 py-16" id="gallery">
+        <div class="max-w-7xl mx-auto px-6 fade-in" style="animation-delay: 0.8s">
+            <h2 class="text-3xl font-bold text-center text-blue-700 mb-10 drop-shadow-sm">
+                Galeri Kegiatan
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <img class="rounded-lg shadow-lg object-cover w-full h-64 transform transition-transform duration-500 hover:scale-105 cursor-pointer" height="300" loading="lazy" src="kegi.webp" width="400"/>
+                <img alt="Siswa SMAM 6 Lamongan sedang berlatih olahraga basket di lapangan indoor dengan semangat dan kebersamaan" class="rounded-lg shadow-lg object-cover w-full h-64 transform transition-transform duration-500 hover:scale-105 cursor-pointer" height="300" loading="lazy" src="Santri PP. AL ADZKIYA' bersama KKN UNKAFA...#kkn #kkn2024 #kknunkafa #santrikeren #nyantri.webp" width="400"/>
+                <img alt="Siswa SMAM 6 Lamongan mengenakan seragam pramuka sedang melakukan kegiatan di alam terbuka dengan latar pepohonan hijau" class="rounded-lg shadow-lg object-cover w-full h-64 transform transition-transform duration-500 hover:scale-105 cursor-pointer" height="300" loading="lazy" src="biasalah.webp" width="400"/>
+                <img alt="Siswa SMAM 6 Lamongan sedang menggunakan komputer di laboratorium komputer dengan fasilitas modern" class="rounded-lg shadow-lg object-cover w-full h-64 transform transition-transform duration-500 hover:scale-105 cursor-pointer" height="300" loading="lazy" src="Alhamdulillah...Santri Ponpes Al Adzkiya’ Muhammadiyah Wotan mampu meraih prestasi di ajang MTQ.webp" width="400"/>
+                <img alt="Siswa SMAM 6 Lamongan sedang menampilkan pertunjukan seni dan budaya di aula sekolah dengan kostum tradisional" class="rounded-lg shadow-lg object-cover w-full h-64 transform transition-transform duration-500 hover:scale-105 cursor-pointer" height="300" loading="lazy" src="Alhamdulillah atas prestasi yang membanggakan... Ponpes Al Adzkiya' Muhammadiyah Wotan mendapat.webp" width="400"/>
+                <img alt="Interior perpustakaan SMAM 6 Lamongan dengan rak buku lengkap dan siswa sedang membaca dengan nyaman" class="rounded-lg shadow-lg object-cover w-full h-64 transform transition-transform duration-500 hover:scale-105 cursor-pointer" height="300" loading="lazy" src="pangung.webp" width="400"/>
+            </div>
+        </div>
+    </section>
+    <!-- News Section -->
+    <section class="bg-white py-16" id="news">
+        <div class="max-w-7xl mx-auto px-6 fade-in" style="animation-delay: 1s">
+            <h2 class="text-3xl font-bold text-center text-blue-700 mb-10 drop-shadow-sm">
+                Berita Terbaru
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition hover-scale cursor-pointer">
+                    <img alt="Guru Ponpes Al Adzkiya sedang mengikuti workshop pengembangan metode pembelajaran di ruang kelas modern" class="w-full h-48 object-cover" height="400" loading="lazy" src="Silaturahmi dan Pembagian Raport Penilaian Akhir Semester Genap Tahun Pelajaran 2023-2024Selama.webp" width="600"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">
+                            Workshop Pengembangan Guru
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            25 Juni 2024
+                        </p>
+                        <p class="text-gray-700">
+                            Ponpes Al Adzkiya mengadakan workshop untuk meningkatkan kualitas
+                            pengajaran dengan metode pembelajaran inovatif.
+                        </p>
+                    </div>
+                </article>
+                <article class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition hover-scale cursor-pointer">
+                    <img class="w-full h-48 object-cover" height="400" loading="lazy" src="menang.webp" width="600"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">
+                            Juara Lomba Tilawatil Quran
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            10 November 2024
+                        </p>
+                        <p class="text-gray-700">
+                            Santri Ponpes Al Adzkiya berhasil meraih juara pertama dalam lomba
+                            Tilawatil Quran
+                        </p>
+                    </div>
+                </article>
+                <article class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition hover-scale cursor-pointer">
+                    <img class="w-full h-48 object-cover" height="400" loading="lazy" src="mnang.webp" width="600"/>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">
+                            Juara Lomba Kaligrafi Kontemporer
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            10 november 2024
+                        </p>
+                        <p class="text-gray-700">
+                            Santri Ponpes Al Adzkiya berhasil meraih juara pertama dalam lomba
+                            Kaligrafi Kontemporer
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="bg-gray-100 py-16" id="contact">
+        <div class="max-w-7xl mx-auto px-6 fade-in" style="animation-delay: 1.2s">
+            <h2 class="text-3xl font-bold text-center text-blue-700 mb-10 drop-shadow-sm">
+                Kontak Kami
+            </h2>
+            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+                <form action="#" class="space-y-6" method="POST" novalidate="">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="name">
+                            Nama Lengkap
+                        </label>
+                        <input aria-label="Nama Lengkap" aria-required="true" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 transition" id="name" name="name" placeholder="Masukkan nama lengkap Anda" required="" type="text"/>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="email">
+                            Email
+                        </label>
+                        <input aria-label="Email" aria-required="true" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 transition" id="email" name="email" placeholder="Masukkan email Anda" required="" type="email"/>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="message">
+                            Pesan
+                        </label>
+                        <textarea aria-label="Pesan" aria-required="true" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 transition" id="message" name="message" placeholder="Tulis pesan Anda di sini" required="" rows="4"></textarea>
+                    </div>
+                    <button class="w-full bg-blue-700 text-white font-semibold py-3 rounded-md shadow-md hover:bg-blue-800 transition transform hover:-translate-y-1" type="submit">
+                        Kirim Pesan
+                    </button>
+                </form>
+                <div class="mt-8 text-gray-700 space-y-4">
+                    <p>
+                        <i aria-hidden="true" class="fas fa-map-marker-alt mr-2 text-blue-700">
+                        </i>
+                        Jl. Raya Lamongan No.123, Lamongan, Jawa Timur
+                    </p>
+                    <p>
+                        <i aria-hidden="true" class="fas fa-phone mr-2 text-blue-700">
+                        </i>
+                        +62 345 678 9012
+                    </p>
+                    <p>
+                        <i aria-hidden="true" class="fas fa-envelope mr-2 text-blue-700">
+                        </i>
+                        info@smam6lamongan.sch.id
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="bg-blue-700 text-white py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm select-text">
+            © 2024 SMAM 6 Lamongan. Semua hak cipta dilindungi.
+        </p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+            <a aria-label="Facebook" class="hover:text-gray-300 transition" href="https://facebook.com" rel="noopener" target="_blank">
+                <i aria-hidden="true" class="fab fa-facebook fa-lg">
+                </i>
+            </a>
+            <a aria-label="Twitter" class="hover:text-gray-300 transition" href="https://twitter.com" rel="noopener" target="_blank">
+                <i aria-hidden="true" class="fab fa-twitter fa-lg">
+                </i>
+            </a>
+            <a aria-label="Instagram" class="hover:text-gray-300 transition" href="https://instagram.com" rel="noopener" target="_blank">
+                <i aria-hidden="true" class="fab fa-instagram fa-lg">
+                </i>
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    const menuBtn = document.getElementById("menu-btn");
+     const mobileMenu = document.getElementById("mobile-menu");
+     const splashScreen = document.getElementById("splash-screen");
+
+     menuBtn.addEventListener("click", () => {
+       mobileMenu.classList.toggle("hidden");
+     });
+
+     // Close mobile menu on link click
+     mobileMenu.querySelectorAll("a").forEach((link) => {
+       link.addEventListener("click", () => {
+         mobileMenu.classList.add("hidden");
+       });
+     });
+
+     // Animate fade-in elements on scroll
+     const fadeIns = document.querySelectorAll(".fade-in");
+     const observer = new IntersectionObserver(
+       (entries) => {
+         entries.forEach((entry) => {
+           if (entry.isIntersecting) {
+             entry.target.style.animationPlayState = "running";
+             observer.unobserve(entry.target);
+           }
+         });
+       },
+       { threshold: 0.1 }
+     );
+
+     fadeIns.forEach((el) => {
+       el.style.animationPlayState = "paused";
+       observer.observe(el);
+     });
+
+     // Splash screen hide after page load + small delay
+     window.addEventListener("load", () => {
+       setTimeout(() => {
+         splashScreen.classList.add("hidden");
+       }, 1500);
+     });
+</script>
+</body>
+</html>
